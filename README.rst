@@ -7,7 +7,7 @@ the old ones. Currently it only works with beaker.ext.database storage backend.
 BeakerHelpers is also a namespace package so new plugins can be created under
 this namespace_.
 
-You can find the Git repository at github.org_
+You can find the Git repository at github.com_
 
 Installation
 ------------

@@ -7,7 +7,7 @@ the old ones. Currently it only works with beaker.ext.database storage backend.
 BeakerHelpers is also a namespace package so new plugins can be created under
 this namespace_.
 
-You can find the Mercurial repository at bitbucket.org_
+You can find the Git repository at github.org_
 
 Installation
 ------------
@@ -112,5 +112,5 @@ instead.
 
 .. _Beaker: http://beaker.groovie.org
 .. _SQLAlchemy engine URL: http://www.sqlalchemy.org/docs/05/dbengine.html#create-engine-url-arguments
-.. _bitbucket.org: http://bitbucket.org/kaukas/beakershowsessions
-.. _namespace: http://peak.telecommunity.com/DevCenter/setuptools#namespace-packages 
+.. _github.com: http://github.com/kaukas/BeakerHelpers
+.. _namespace: http://peak.telecommunity.com/DevCenter/setuptools#namespace-packages

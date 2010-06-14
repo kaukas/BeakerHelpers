@@ -230,11 +230,6 @@ def test_session_cleanup():
 
     Now call the cleanup and ask it to clean the sessions older than 1 day
 
-        #>>> cfg_file = os.path.join(os.path.dirname(__file__), 'testapp.cfg')
-        #>>> cmd = CallEP('')
-        #>>> outcode = cmd.run(['beaker.scripts.cleanup:cleanup', cfg_file,
-        #...     '1d'])
-
         >>> cmd.run([cfg_file, '--timeout', '1d'])
         0
 
@@ -248,8 +243,6 @@ def test_session_cleanup():
 
     Now cleanup the sessions older than 2 hours and check
 
-        #>>> outcode = cmd.run(['beaker.scripts.cleanup:cleanup', cfg_file,
-        #...     '2h'])
         >>> cmd.run([cfg_file, '--timeout', '2h'])
         0
         >>> for c in ses_table.select(order_by='namespace').execute():
@@ -260,8 +253,6 @@ def test_session_cleanup():
     Now cleanup the sessions older than 10 seconds (according to the config) and
     check
 
-        #>>> outcode = cmd.run(['beaker.scripts.cleanup:cleanup', cfg_file,
-        #...     '55m'])
         >>> cmd.run([cfg_file, '--prefix', 'bkr.session'])
         0
         >>> for c in ses_table.select(order_by='namespace').execute():

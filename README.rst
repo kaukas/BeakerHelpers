@@ -1,5 +1,5 @@
 BeakerHelpers
-==================
+=============
 
 BeakerHelpers is a Beaker_ extension that can show the active sessions and clean
 the old ones. Currently it only works with beaker.ext.database storage backend.
@@ -12,19 +12,18 @@ You can find the Git repository at github.com_
 Installation
 ------------
 
-easy_install::
+easy_install_::
 
     $ <env>/bin/easy_install BeakerHelpers
 
-pip::
+pip_::
 
     $ <env>/bin/pip install BeakerHelpers
 
 Get / Show Sessions Usage
 -------------------------
 
-You can call ``get_sessions`` in order to get a list of active sessions
-(dicts)::
+You can call ``get_sessions`` to get a list of active sessions (dicts)::
 
     >>> import sqlalchemy
     >>> from beakerhelpers.sessions import get_sessions
@@ -37,9 +36,8 @@ You can call ``get_sessions`` in order to get a list of active sessions
         'user_name': u'john@doe.com',
     }]
 
-The above form is suitable for access from Python. If you want to provide this
-data to the user you could use ``show_sessions`` with the same parameters
-instead::
+The above form is suitable for Python access. If you want to provide this data
+to the user you could use ``show_sessions`` with the same parameters instead::
 
     >>> print show_sessions(sessions_table, timeout=3600)
     --------------------------------------------------------
@@ -47,7 +45,8 @@ instead::
     --------------------------------------------------------
     2010-01-01 10:10:10 | 2010-01-01 08:40:00 | john@doe.com
 
-However you can use ``paster`` to call the ``show_sessions`` from the console::
+However you can use ``paster beakersessions`` to call the ``show_sessions`` from
+the console::
 
     $ <env>/bin/paster beakersessions cfg/prod.ini
     --------------------------------------------------------
@@ -63,7 +62,7 @@ section of `cfg/prod.ini`:
     - ``beaker.session.url`` - an `SQLAlchemy engine URL`_
     - ``beaker.session.timeout`` - session timeout in seconds
     - ``beaker.session.table_name`` - (optional) session storage table.
-      According to beaker, defaults to `beaker_cache`.
+      According to beaker.ext.database_, defaults to `beaker_cache`.
 
 ``paster beakersessions`` command also takes two optional arguments:
 
@@ -111,6 +110,9 @@ package and access became simpler. We strongly encourage to use BeakerHelpers
 instead.
 
 .. _Beaker: http://beaker.groovie.org
+.. _beaker.ext.database: http://www.bitbucket.org/bbangert/beaker/src/554a46f4a946/beaker/ext/database.py#cl-35 
 .. _SQLAlchemy engine URL: http://www.sqlalchemy.org/docs/05/dbengine.html#create-engine-url-arguments
 .. _github.com: http://github.com/kaukas/BeakerHelpers
 .. _namespace: http://peak.telecommunity.com/DevCenter/setuptools#namespace-packages
+.. _easy_install: http://peak.telecommunity.com/DevCenter/EasyInstall 
+.. _pip: http://pip.openplans.org/ 
